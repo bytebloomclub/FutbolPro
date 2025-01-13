@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FútbolPro - Apuestas Deportivas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #004aad;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .partido {
+            margin-bottom: 1.5rem;
+        }
+
+        .partido h3 {
+            margin: 0 0 0.5rem;
+        }
+
+        .partido label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .partido input {
+            width: calc(100% - 2rem);
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .partido button {
+            padding: 0.5rem 1rem;
+            background: #004aad;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .partido button:hover {
+            background: #00337a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FútbolPro - Apuestas Deportivas</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#partidos">Partidos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido</h2>
+            <p>Únete a la emoción de las apuestas deportivas de fútbol. Elige tus equipos favoritos y gana grandes premios.</p>
+        </section>
+
+        <section id="partidos">
+            <h2>Partidos Disponibles</h2>
+            <div class="partido">
+                <h3>Equipo A vs Equipo B</h3>
+                <p>Fecha: 15 de Enero, 2025</p>
+                <label for="apuesta1">Tu apuesta:</label>
+                <input type="number" id="apuesta1" placeholder="Cantidad">
+                <button onclick="realizarApuesta('Equipo A vs Equipo B')">Apostar</button>
+            </div>
+            <div class="partido">
+                <h3>Equipo C vs Equipo D</h3>
+                <p>Fecha: 18 de Enero, 2025</p>
+                <label for="apuesta2">Tu apuesta:</label>
+                <input type="number" id="apuesta2" placeholder="Cantidad">
+                <button onclick="realizarApuesta('Equipo C vs Equipo D')">Apostar</button>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Si tienes preguntas, contáctanos en <a href="mailto:soporte@apuestasfutbol.com">soporte@apuestasfutbol.com</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 FútbolPro. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function realizarApuesta(partido) {
+            const cantidad = document.querySelector(`#apuesta${partido.includes('B') ? 1 : 2}`).value;
+            if (cantidad && cantidad > 0) {
+                alert(`Has apostado ${cantidad} en el partido: ${partido}`);
+            } else {
+                alert('Por favor, ingresa una cantidad válida para apostar.');
+            }
+        }
+    </script>
+</body>
+</html>
